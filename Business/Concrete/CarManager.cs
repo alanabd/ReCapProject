@@ -16,6 +16,20 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        public void Add(Car car)
+        {
+            
+            if (car.Description.Length<=2||car.DailyPrice<=0)
+            {
+                Console.WriteLine("Araç açıklması 2 karakterden fazla olmalıdır");
+                Console.WriteLine("Araç kiralama bedeli 0 dan büyük olmalı");
+            }
+            else
+            {
+                _carDal.Add(car);
+            }
+            
+        }
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
