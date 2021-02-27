@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using Entities.Abstract;
+using Core.Entities;
+
 
 namespace Entities.Concrete
 {
-    public class Car:IEntity
+    public class Car : IEntity
     {
         public int CarId { get; set; }
         public int BrandId { get; set; }
