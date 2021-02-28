@@ -20,9 +20,17 @@ namespace ConsoleUI
             //    Description = "d",
             //    ModelYear = 2012
             //});
-            foreach (var item in carManager.getCarDetails())
+            
+            if (carManager.GetAll().Success)
             {
-                Console.WriteLine(item.CarId+"   "+item.Description+"   "+item.ColorName+"   "+item.BrandName);
+                foreach (var item in carManager.GetAll().Data)
+                {
+                    Console.WriteLine(item.CarId + "   " + item.Description );
+                }
+            }
+            else
+            {
+                Console.WriteLine(carManager.GetAll().Message);
             }
         }
     }
