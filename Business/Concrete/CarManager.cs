@@ -26,7 +26,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.ProductNameInvalid);
             }
             _carDal.Add(car);
-            return new SuccessResult(Messages.PrductAdded);
+            return new SuccessResult(Messages.Added);
             
             
         }
@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public IDataResult<List<CarDetailDto>> getCarDetails()
         {
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.getCarDetailDto(), "ürünler listelendi");
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.getCarDetailDto(), Messages.ProductsListed);
         }
 
         
